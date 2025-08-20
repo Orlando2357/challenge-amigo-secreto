@@ -12,7 +12,6 @@ function agregarAmigo() {
     }
 }
 
-
 //Funcion para limpiar el campo 
 function limpiarCaja() {
     document.querySelector('#amigo').value = '';
@@ -25,7 +24,6 @@ function mostrarLista() {
         texto += '<li>' + listaDeAmigos[i] + '</li>';
     }
     asignarTextoElemento('listaAmigos',texto);
-    //console.log(texto);
 }
 
 //Funcion para pasar textro desde JS a HTML 
