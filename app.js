@@ -33,3 +33,13 @@ function asignarTextoElemento(elemento, texto) {
     let elementoHTML = document.querySelector('#'+elemento);
     elementoHTML.innerHTML = texto;
 }
+
+//Funcion para sorterar amigo... Se agrega una alert para cuando la lista este vacia.
+function sortearAmigo() {
+    let posicionDeArray = Math.floor(Math.random()*listaDeAmigos.length);
+    if (listaDeAmigos.length === 0){
+        alert('Lista de amigos vacia.');
+    } else {
+        asignarTextoElemento('resultado',listaDeAmigos[posicionDeArray]);
+    }
+}
