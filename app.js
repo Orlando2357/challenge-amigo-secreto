@@ -1,5 +1,6 @@
-let listaDeAmigos = [];
+let listaDeAmigos = []; // Array para almacenar la lista de amigos
 
+//Funcion para agregar un amigo a la lista... Se manda llamar las funcions para limpiar el campo de entrada y mostrar la lista de amigos
 function agregarAmigo() {
     let amigo = document.getElementById('amigo').value;
     if (amigo == '') {
@@ -7,9 +8,28 @@ function agregarAmigo() {
     } else {
         listaDeAmigos.push(amigo);
         limpiarCaja();
+        mostrarLista();
     }
 }
 
+
+//Funcion para limpiar el campo 
 function limpiarCaja() {
     document.querySelector('#amigo').value = '';
+}
+
+//Funcion para mostrar la lista de amigos en el elemnto Lista de HTML
+function mostrarLista() {
+    let texto = ''
+    for (let i = 0; i < listaDeAmigos.length; i++) {
+        texto += '<li>' + listaDeAmigos[i] + '</li>';
+    }
+    asignarTextoElemento('listaAmigos',texto);
+    //console.log(texto);
+}
+
+//Funcion para pasar textro desde JS a HTML 
+function asignarTextoElemento(elemento, texto) {
+    let elementoHTML = document.querySelector('#'+elemento);
+    elementoHTML.innerHTML = texto;
 }
